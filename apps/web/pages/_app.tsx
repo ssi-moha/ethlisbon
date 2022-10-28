@@ -1,11 +1,14 @@
+import '../min.css';
 import { AppProps } from "next/app";
-import { ThemeProvider } from "ui";
+import { Layout, ThemeProvider } from "ui";
 
 function App({ Component, pageProps }: AppProps) {
   return (
 
     <ThemeProvider>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ThemeProvider>
   );
 }

@@ -1,6 +1,7 @@
 export * from './ProductList'
 
 export * from './theme'
+export * from './Layout'
 
 // @chakra-ui
-export { Box } from '@chakra-ui/react';
+export { Box, Flex } from '@chakra-ui/react';
