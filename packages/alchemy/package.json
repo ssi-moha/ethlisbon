@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "lint": "lint --fix",
     "test": "yarn jest"
   },
   "dependencies": {
