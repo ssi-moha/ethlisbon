@@ -1,8 +1,11 @@
-import { Box, ProductCard, ProductGrid, products } from 'ui'
+import { Box } from '@chakra-ui/react'
 
-export default function Web() {
-  return (
-    <Box
+import { ProductCard } from './ProductCard'
+import { products } from './_data'
+import { ProductGrid } from './ProductGrid'
+
+export const App = () => (
+  <Box
     maxW="7xl"
     mx="auto"
     px={{ base: '4', md: '8', lg: '12' }}
@@ -14,5 +17,4 @@ export default function Web() {
       ))}
     </ProductGrid>
   </Box>
-  );
-}
+)
