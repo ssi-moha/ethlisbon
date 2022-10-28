@@ -1,0 +1,13 @@
+{
+  "name": "alchemy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "yarn jest"
+  },
+  "dependencies": {
+    "@alch/alchemy-web3": "^1.4.7",
+    "alchemy-sdk": "^2.2.0"
+  }
+}

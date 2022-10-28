@@ -1,5 +1,6 @@
 {
   "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": [".env", "tsconfig.json"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
@@ -12,6 +13,7 @@
       "outputs": []
     },
     "dev": {
+      "dependsOn": ["$ALCHEMY_SECRET_KEY"],
       "cache": false
     }
   }
