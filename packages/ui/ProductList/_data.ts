@@ -29,7 +29,7 @@ export const images = [
     src: 'https://images.unsplash.com/photo-1548169874-53e85f753f1e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1420&q=80',
     alt: 'Awesome watch',
   },
-]
+];
 
 export const products = [
   {
@@ -75,13 +75,13 @@ export const products = [
       'With a sleek design and a captivating essence, this is a modern Classic made for every occasion.',
     images,
   },
-]
+];
 
 export type ElementType<T extends ReadonlyArray<unknown>> = T extends ReadonlyArray<
   infer ElementType
 >
   ? ElementType
-  : never
+  : never;
 
-export type Product = ElementType<typeof products>
-export type ProductImage = ElementType<typeof images>
+export type Product = ElementType<typeof products>;
+export type ProductImage = ElementType<typeof images>;

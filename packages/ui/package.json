@@ -4,7 +4,7 @@
   "main": "./index.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "TIMING=1 eslint \"**/*.ts*\"",
+    "lint": "TIMING=1 eslint \"**/*.ts*\" --fix",
     "test": "jest"
   },
   "devDependencies": {

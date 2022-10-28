@@ -1,6 +1,6 @@
-import { Icon, IconButton, IconButtonProps, LightMode } from '@chakra-ui/react'
+import { Icon, IconButton, IconButtonProps, LightMode } from '@chakra-ui/react';
 
-import { FiHeart } from 'react-icons/fi'
+import { FiHeart } from 'react-icons/fi';
 
 export const FavouriteButton = (props: IconButtonProps) => (
   <LightMode>
@@ -17,4 +17,4 @@ export const FavouriteButton = (props: IconButtonProps) => (
       {...props}
     />
   </LightMode>
-)
+);

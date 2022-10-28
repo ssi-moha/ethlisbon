@@ -1,8 +1,8 @@
-import { Box } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react';
 
-import { ProductCard } from './ProductCard'
-import { products } from './_data'
-import { ProductGrid } from './ProductGrid'
+import { ProductCard } from './ProductCard';
+import { products } from './_data';
+import { ProductGrid } from './ProductGrid';
 
 export const App = () => (
   <Box
@@ -17,4 +17,4 @@ export const App = () => (
       ))}
     </ProductGrid>
   </Box>
-)
+);

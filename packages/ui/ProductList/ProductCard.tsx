@@ -9,20 +9,20 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
-import { FavouriteButton } from './FavouriteButton'
-import { PriceTag } from './PriceTag'
-import { Product } from './_data'
+import { FavouriteButton } from './FavouriteButton';
+import { PriceTag } from './PriceTag';
+import { Product } from './_data';
 
 interface Props {
-  product: Product
-  rootProps?: StackProps
+  product: Product;
+  rootProps?: StackProps;
 }
 
 export const ProductCard = (props: Props) => {
-  const { product, rootProps } = props
-  const { name, imageUrl, price, salePrice } = product
+  const { product, rootProps } = props;
+  const { name, imageUrl, price, salePrice } = product;
   return (
     <Stack spacing={useBreakpointValue({ base: '4', md: '5' })} {...rootProps}>
       <Box position="relative">
@@ -56,5 +56,5 @@ export const ProductCard = (props: Props) => {
         </Button>
       </Stack>
     </Stack>
-  )
-}
+  );
+};

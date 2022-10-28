@@ -1,6 +1,5 @@
-import { Box, BoxProps } from '@chakra-ui/react'
+import { Box, BoxProps } from '@chakra-ui/react';
 
-
-export const Placeholder = (props: BoxProps) => {
-  return <Box role="presentation" py="3" px="4" color="on-accent" {...props} />
-}
+export const Placeholder = (props: BoxProps) => (
+  <Box role="presentation" py="3" px="4" color="on-accent" {...props} />
+);
