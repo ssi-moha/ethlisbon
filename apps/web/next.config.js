@@ -1,6 +1,3 @@
-module.exports = {
-  reactStrictMode: true,
-  experimental: {
-    transpilePackages: ["ui"],
-  },
-};
+const withTM = require("next-transpile-modules");
+
+module.exports = withTM(["ui"])({ reactStrictMode: true });
