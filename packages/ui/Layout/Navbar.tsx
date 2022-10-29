@@ -2,8 +2,13 @@ import { Box, Button, ButtonGroup, Flex, HStack, Text, useColorModeValue } from 
 import Link from 'next/link';
 
 export const Navbar = () => (
-  <Box as="section" w="full" px={{ base: '4', md: '8', lg: '12' }}>
-    <Box as="nav" bg="bg-surface" boxShadow={useColorModeValue('sm', 'sm-dark')}>
+  <Box as="section" w="full">
+    <Box
+      as="nav"
+      bg="bg-surface"
+      boxShadow={useColorModeValue('sm', 'sm-dark')}
+      px={{ base: '4', md: '8', lg: '12' }}
+    >
       <HStack spacing="10" justify="space-between" height="60px">
         <Link href="/">
           <Text fontWeight="bold" cursor="pointer">
