@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
-import { useAppDispatch } from 'store';
+import { useAppDispatch, useAppSelector } from 'store';
 import { fetchNFTS } from 'store/slices/nfts';
 
 export const useGetNftOfAWallet = () => {
   const dispatch = useAppDispatch();
+  const address = useAppSelector((state) => state.user.address);
+  const nfts = useAppSelector((state) => state.user.nfts);
+
   useEffect(() => {
-    dispatch(fetchNFTS('0x1a1710F0238b516c2fad1dd0F1EAD108656Fdc32'));
-  }, [dispatch]);
+    dispatch(fetchNFTS(address));
+  }, [dispatch, address]);
 };

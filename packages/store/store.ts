@@ -3,10 +3,12 @@ import { createWrapper } from 'next-redux-wrapper';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import nftsReducer from './slices/nfts';
+import addressReducer from './slices/address';
 
 const rootReducer = combineReducers({
   user: combineReducers({
     nfts: nftsReducer,
+    address: addressReducer,
   }),
 });
 
