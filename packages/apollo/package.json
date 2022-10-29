@@ -4,7 +4,7 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "generate:graphql": "DOTENV_CONFIG_PATH=../../.env graphql-codegen --config codegen.yaml -r dotenv/config && prettier --write ./generated.tsx"
+    "generate": "DOTENV_CONFIG_PATH=../../.env graphql-codegen --config codegen.yaml -r dotenv/config && prettier --write ./generated.tsx"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",

@@ -15,6 +15,11 @@
     },
     "dev": {
       "cache": false
+    },
+    "generate": {
+      "outputs": ["**/generated.tsx"],
+      "env": ["HASURA_API_URL", "HASURA_API_KEY"],
+      "cache": false
     }
   }
 }
