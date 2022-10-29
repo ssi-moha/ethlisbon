@@ -5,6 +5,7 @@ import {
   initializeApollo,
   Product,
 } from 'apollo';
+import { useAppSelector } from 'store';
 import { ProductCard, ProductGrid } from 'ui';
 import { useIsAnHolder } from '../hooks/useIsAnHolder';
 
@@ -17,7 +18,7 @@ type ProductCardContainerProps = {
 };
 
 const ProductCardContainer = ({ product }: ProductCardContainerProps) => {
-  const isAnHolder = useIsAnHolder(product.collection);
+  const isAnHolder = useIsAnHolder(product);
 
   return <ProductCard product={product} isAnHolder={isAnHolder} />;
 };

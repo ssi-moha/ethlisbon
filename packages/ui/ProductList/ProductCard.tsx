@@ -26,13 +26,13 @@ interface Props {
 
 export const ProductCard = (props: Props) => {
   const { product, rootProps, isAnHolder } = props;
-  const { id, name, image, price, discount, collection } = product;
+  const { id, name, image, price, discount, collection, curation } = product;
 
   const salePrice = applyDiscount(price, discount);
 
   return (
     <Stack spacing={useBreakpointValue({ base: '4', md: '5' })} position="relative" {...rootProps}>
-      {isAnHolder && <LockedLayer isLocked={isAnHolder} collectionName={collection} />}
+      {curation && <LockedLayer isLocked={!isAnHolder} collectionName={collection} />}
       <Box position="relative">
         <AspectRatio ratio={4 / 3}>
           <Image
