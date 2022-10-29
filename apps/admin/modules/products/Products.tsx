@@ -4,18 +4,10 @@ import { Box, Button, Header, Spinner, Table, TableContainer, Tbody, Th, Thead, 
 import { PRODUCT_ATTRIBUTES } from './constants';
 import { ProductListItem } from './ProductListItem';
 
-import { useGetProductsQuery } from 'apollo';
+import { Product, useGetProductsQuery } from 'apollo';
 
 type ProductsProps = {
-  products: {
-    id: string;
-    image: string;
-    name: string;
-    price: string;
-    discount?: string;
-    collection?: string;
-    collectionAddress?: string;
-  }[];
+  products: Product[];
 };
 
 export const Products = ({ products }: ProductsProps) => {
@@ -32,7 +24,7 @@ export const Products = ({ products }: ProductsProps) => {
   return (
     <Box>
       <Header title="Products">
-        <Link href="/admin/product/add">
+        <Link href="/add">
           <Button>+ New Product</Button>
         </Link>
       </Header>
@@ -57,20 +49,18 @@ export const Products = ({ products }: ProductsProps) => {
             </Thead>
 
             <Tbody>
-              {products.map(
-                ({ id, image, name, price, discount, collection, collectionAddress }) => (
-                  <ProductListItem
-                    key={id}
-                    id={id}
-                    image={image}
-                    name={name}
-                    price={price}
-                    discount={discount}
-                    collection={collection}
-                    collectionAddress={collectionAddress}
-                  />
-                ),
-              )}
+              {products.map(({ id, image, name, price, discount, collection, curation }) => (
+                <ProductListItem
+                  key={id}
+                  id={id}
+                  image={image}
+                  name={name}
+                  price={price}
+                  discount={discount}
+                  collection={collection}
+                  collectionAddress={curation}
+                />
+              ))}
             </Tbody>
           </Table>
         </TableContainer>
