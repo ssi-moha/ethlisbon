@@ -3,7 +3,7 @@ import { AddProductFormContainer } from '../modules/products/AddProductFormConta
 
 const AddProductPage = ({}) => (
   <>
-    <BackButton href="/admin" />
+    <BackButton href="/" />
     <AddProductFormContainer />
   </>
 );

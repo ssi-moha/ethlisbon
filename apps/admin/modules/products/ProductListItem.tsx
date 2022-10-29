@@ -21,7 +21,7 @@ export const ProductListItem = ({
   collection,
   collectionAddress,
 }: ProductListItemProps) => (
-  <Link href={`/admin/product/edit/${id}`} legacyBehavior>
+  <Link href={`/edit/${id}`} legacyBehavior>
     <Tr
       sx={{
         _hover: {

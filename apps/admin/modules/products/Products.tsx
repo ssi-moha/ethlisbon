@@ -23,7 +23,7 @@ export const Products = ({ products }: ProductsProps) => {
 
   return (
     <Box>
-      <Header title="Products">
+      <Header title="Back-office">
         <Link href="/add">
           <Button>+ New Product</Button>
         </Link>
