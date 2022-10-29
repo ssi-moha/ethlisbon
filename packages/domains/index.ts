@@ -1,2 +1,2 @@
-export * from "./WalletScrapper"
-export * from "./storage"
+export * from './WalletScrapper';
+export * from './storage';

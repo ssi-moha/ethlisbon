@@ -1,1 +1,1 @@
-export type { Nft } from "alchemy";
+export type { Nft } from 'alchemy';
