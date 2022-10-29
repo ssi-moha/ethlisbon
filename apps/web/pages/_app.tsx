@@ -1,11 +1,12 @@
 import '../min.css';
 import { AppProps } from 'next/app';
-import { Layout, ThemeProvider } from 'ui';
+import { ThemeProvider } from 'ui';
 import { useApollo, ApolloProvider } from 'apollo';
 import { useAppDispatch, useAppSelector, wrapper } from 'store';
 import { useGetNftOfAWallet } from '../hooks';
 import { useEffect } from 'react';
 import { connect, reset } from 'store/slices/address';
+import { Layout } from '../modules';
 
 function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps);
