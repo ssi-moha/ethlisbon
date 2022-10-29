@@ -1,0 +1,13 @@
+{
+  "name": "form",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "lint --fix",
+    "test": "yarn jest"
+  },
+  "dependencies": {
+    "react-hook-form": "^7.38.0"
+  }
+}
