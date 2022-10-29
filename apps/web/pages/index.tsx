@@ -6,16 +6,27 @@ import {
   Product,
 } from 'apollo';
 import { ProductCard, ProductGrid } from 'ui';
+import { useIsAnHolder } from '../hooks/useIsAnHolder';
 
 type WebProps = {
   products: Product[];
+};
+
+type ProductCardContainerProps = {
+  product: Product;
+};
+
+const ProductCardContainer = ({ product }: ProductCardContainerProps) => {
+  const isAnHolder = useIsAnHolder(product.collection);
+
+  return <ProductCard product={product} isAnHolder={isAnHolder} />;
 };
 
 export default function Web({ products }: WebProps) {
   return (
     <ProductGrid>
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCardContainer product={product} />
       ))}
     </ProductGrid>
   );

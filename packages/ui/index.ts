@@ -8,6 +8,7 @@ export * from './BackButton';
 export * from './Icons';
 export * from './Section';
 export * from './OrderSummary/OrderSummary';
+export * from './LockedLayer/LockedLayer';
 
 // @chakra-ui
 export {

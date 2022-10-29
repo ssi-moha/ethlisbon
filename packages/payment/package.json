@@ -4,7 +4,7 @@
   "main": "index.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "lint --fix"
+    "lint": "eslint \"**/*.ts*\" --fix"
   },
   "dependencies": {
     "@stripe/stripe-js": "^1.42.0",

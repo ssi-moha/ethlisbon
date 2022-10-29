@@ -16,20 +16,23 @@ import { FavouriteButton } from './FavouriteButton';
 import { applyDiscount } from 'pure';
 import { PriceTag } from './PriceTag';
 import { Product } from 'apollo';
+import { LockedLayer } from '../LockedLayer/LockedLayer';
 
 interface Props {
   product: Product;
   rootProps?: StackProps;
+  isAnHolder: boolean;
 }
 
 export const ProductCard = (props: Props) => {
-  const { product, rootProps } = props;
-  const { id, name, image, price, discount } = product;
+  const { product, rootProps, isAnHolder } = props;
+  const { id, name, image, price, discount, collection } = product;
 
   const salePrice = applyDiscount(price, discount);
 
   return (
-    <Stack spacing={useBreakpointValue({ base: '4', md: '5' })} {...rootProps}>
+    <Stack spacing={useBreakpointValue({ base: '4', md: '5' })} position="relative" {...rootProps}>
+      {isAnHolder && <LockedLayer isLocked={isAnHolder} collectionName={collection} />}
       <Box position="relative">
         <AspectRatio ratio={4 / 3}>
           <Image
