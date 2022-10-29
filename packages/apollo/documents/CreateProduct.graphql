@@ -1,0 +1,39 @@
+mutation CreateProduct(
+  $appId: uuid!
+  $price: numeric
+  $name: String
+  $description: String
+  $image: bpchar
+  $discount: smallint
+  $curation: bpchar
+  $collection: bpchar
+  $poapId: numeric
+  $isDiscountGated: Boolean
+) {
+  insert_product_one(
+    object: {
+      app_id: $appId
+      discount: $discount
+      image: $image
+      name: $name
+      description: $description
+      price: $price
+      curation: $curation
+      collection: $collection
+      poapId: $poapId
+      isDiscountGated: $isDiscountGated
+    }
+  ) {
+    app_id
+    collection
+    curation
+    discount
+    id
+    image
+    name
+    description
+    price
+    poapId
+    isDiscountGated
+  }
+}
