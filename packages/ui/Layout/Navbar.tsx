@@ -16,11 +16,11 @@ export const Navbar = () => (
           </Text>
         </Link>
 
-        <Flex justify="space-between" flex="1">
-          <ButtonGroup variant="link" spacing="8">
+        <Flex justify="flex-end" flex="1">
+          {/* <ButtonGroup variant="link" spacing="8">
             <Button> Product </Button>
             <Button> About </Button>
-          </ButtonGroup>
+          </ButtonGroup> */}
 
           <HStack spacing="3">
             <Button variant="ghost">Sign in</Button>

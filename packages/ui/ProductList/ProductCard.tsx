@@ -13,8 +13,10 @@ import {
 import Link from 'next/link';
 
 import { FavouriteButton } from './FavouriteButton';
+import { applyDiscount } from 'pure';
 import { PriceTag } from './PriceTag';
 import { Product } from 'apollo';
+
 interface Props {
   product: Product;
   rootProps?: StackProps;
@@ -22,9 +24,9 @@ interface Props {
 
 export const ProductCard = (props: Props) => {
   const { product, rootProps } = props;
-  const { id, name, image, price } = product;
+  const { id, name, image, price, discount } = product;
 
-  const salePrice = price;
+  const salePrice = applyDiscount(price, discount);
 
   return (
     <Stack spacing={useBreakpointValue({ base: '4', md: '5' })} {...rootProps}>
@@ -38,19 +40,23 @@ export const ProductCard = (props: Props) => {
             borderRadius={useBreakpointValue({ base: 'md', md: 'xl' })}
           />
         </AspectRatio>
-        <FavouriteButton
+        {/* <FavouriteButton
           position="absolute"
           top="4"
           right="4"
           aria-label={`Add ${name} to your favourites`}
-        />
+        /> */}
       </Box>
       <Stack>
         <Stack spacing="1">
           <Text fontWeight="medium" color={useColorModeValue('gray.700', 'gray.400')}>
             {name}
           </Text>
-          <PriceTag price={price} salePrice={salePrice} currency="USD" />
+          <PriceTag
+            price={price}
+            salePrice={price !== salePrice ? salePrice : undefined}
+            currency="USD"
+          />
         </Stack>
       </Stack>
 
