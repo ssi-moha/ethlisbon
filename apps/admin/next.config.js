@@ -1,7 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-};
+const withTM = require('next-transpile-modules');
 
-module.exports = nextConfig;
+module.exports = withTM(['ui', 'alchemy', 'domains', 'infra', 'supabase', 'pure', 'apollo'])({
+  reactStrictMode: true,
+  env: {
+    HASURA_API_URL: process.env.HASURA_API_URL,
+    HASURA_API_KEY: process.env.HASURA_API_KEY,
+    APP_ID: process.env.APP_ID,
+  },
+  images: {
+    domains: ['assets.poap.xyz', 'www.poap.xyz', 'poap.xyz', 'kqjytgxbtetzewipikax.supabase.co'],
+  },
+});

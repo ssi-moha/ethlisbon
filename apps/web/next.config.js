@@ -5,5 +5,6 @@ module.exports = withTM(['ui', 'alchemy', 'domains', 'infra', 'supabase', 'pure'
   env: {
     HASURA_API_URL: process.env.HASURA_API_URL,
     HASURA_API_KEY: process.env.HASURA_API_KEY,
+    APP_ID: process.env.APP_ID,
   },
 });
