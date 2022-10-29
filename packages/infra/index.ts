@@ -1,1 +1,2 @@
-export * from "./NftWalletScrapperClient";
+export * from './NftWalletScrapperClient';
+export * from './ImageStorageClient';
