@@ -38,7 +38,7 @@ const QuantitySelect = (props: SelectProps) => (
 );
 
 export const CartItem = (props: CartItemProps) => {
-  const { name, description, imageUrl } = props;
+  const { name, description, price, imageUrl } = props;
 
   return (
     <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="center" w="full">
@@ -64,7 +64,7 @@ export const CartItem = (props: CartItemProps) => {
       </Stack>
 
       <Flex justify="space-between" display={{ base: 'none', md: 'flex' }}>
-        <Text fontWeight="medium"> $597.00 </Text>
+        <Text fontWeight="medium"> ${price} </Text>
       </Flex>
     </Flex>
   );
