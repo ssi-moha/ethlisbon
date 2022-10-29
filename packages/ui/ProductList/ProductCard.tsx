@@ -10,6 +10,7 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 
 import { FavouriteButton } from './FavouriteButton';
 import { PriceTag } from './PriceTag';
@@ -22,7 +23,8 @@ interface Props {
 
 export const ProductCard = (props: Props) => {
   const { product, rootProps } = props;
-  const { name, imageUrl, price, salePrice } = product;
+  const { id, name, imageUrl, price, salePrice } = product;
+
   return (
     <Stack spacing={useBreakpointValue({ base: '4', md: '5' })} {...rootProps}>
       <Box position="relative">
@@ -50,10 +52,13 @@ export const ProductCard = (props: Props) => {
           <PriceTag price={price} salePrice={salePrice} currency="USD" />
         </Stack>
       </Stack>
+
       <Stack align="center">
-        <Button colorScheme="blue" width="full">
-          Buy
-        </Button>
+        <Link href={`product/${id}`}>
+          <Button colorScheme="blue" width="full">
+            Buy
+          </Button>
+        </Link>
       </Stack>
     </Stack>
   );
