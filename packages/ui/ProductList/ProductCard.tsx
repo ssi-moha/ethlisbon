@@ -14,8 +14,7 @@ import Link from 'next/link';
 
 import { FavouriteButton } from './FavouriteButton';
 import { PriceTag } from './PriceTag';
-import { Product } from './_data';
-
+import { Product } from 'apollo';
 interface Props {
   product: Product;
   rootProps?: StackProps;
@@ -23,14 +22,16 @@ interface Props {
 
 export const ProductCard = (props: Props) => {
   const { product, rootProps } = props;
-  const { id, name, imageUrl, price, salePrice } = product;
+  const { id, name, image, price } = product;
+
+  const salePrice = price;
 
   return (
     <Stack spacing={useBreakpointValue({ base: '4', md: '5' })} {...rootProps}>
       <Box position="relative">
         <AspectRatio ratio={4 / 3}>
           <Image
-            src={imageUrl}
+            src={image}
             alt={name}
             draggable="false"
             fallback={<Skeleton />}

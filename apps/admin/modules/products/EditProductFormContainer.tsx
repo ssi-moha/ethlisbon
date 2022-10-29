@@ -63,7 +63,7 @@ export const EditProductFormContainer = ({ product }: EditProductFormContainerPr
         onCompleted: () => toast(getDeleteProductSuccessMessage(product.name)),
         onError: () => toast(ERROR_MESSAGE),
       });
-      router.push('/admin');
+      router.push('/');
     } catch (e) {
       console.error(e);
     } finally {
