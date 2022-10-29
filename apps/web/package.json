@@ -9,13 +9,15 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.14.1",
+    "apollo": "*",
     "next": "12.3.1",
     "next-transpile-modules": "^9.1.0",
+    "payment": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "*",
-    "apollo": "*",
-    "store": "*"
+    "store": "*",
+    "ui": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

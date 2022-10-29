@@ -1,0 +1,13 @@
+{
+  "name": "payment",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "scripts": {
+    "lint": "lint --fix"
+  },
+  "dependencies": {
+    "@stripe/stripe-js": "^1.42.0",
+    "stripe": "^10.15.0"
+  }
+}

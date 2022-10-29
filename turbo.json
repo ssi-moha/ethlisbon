@@ -1,7 +1,17 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "globalDependencies": [".env", "tsconfig.json"],
-  "globalEnv": ["ALCHEMY_SECRET_KEY", "SUPABASE_API_KEY", "HASURA_API_URL", "HASURA_API_KEY", "APP_ID"],
+  "globalEnv": [
+    "ALCHEMY_SECRET_KEY",
+    "SUPABASE_API_KEY",
+    "HASURA_API_URL",
+    "HASURA_API_KEY",
+    "APP_ID",
+    "STRIPE_SECRET_KEY",
+    "PUBLIC_STRIPE_PUBLISHABLE_KEY",
+    "NODE_ENV",
+    "VERCEL_URL"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],

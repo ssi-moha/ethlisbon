@@ -2,6 +2,7 @@ import { initializeApollo, GetProductByIdDocument, addApolloState } from 'apollo
 import { GetServerSidePropsContext } from 'next';
 import { Box, OrderSummary, Stack } from 'ui';
 import { ShippingForm } from '../../modules';
+import { CheckoutContainer } from '../../modules/checkout/CheckoutContainer';
 import { PaymentForm } from '../../modules/shipping/PaymentForm';
 
 type ShippingPageProps = {
@@ -17,7 +18,7 @@ export default function Shipping({ product }: ShippingPageProps) {
         <Box flex={1}>
           <ShippingForm />
 
-          <PaymentForm />
+          <CheckoutContainer price={product.price} discount={product.discount} id={product.id} />
         </Box>
 
         <Box minW="400px" maxW="400px">
