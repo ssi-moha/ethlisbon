@@ -1,4 +1,4 @@
-import { Container, Flex, FlexProps } from '@chakra-ui/react';
+import { Box, Flex, FlexProps } from '@chakra-ui/react';
 
 export const Main = (props: FlexProps) => (
   <Flex
@@ -10,6 +10,8 @@ export const Main = (props: FlexProps) => (
     px={{ base: '4', md: '8', lg: '12' }}
     {...props}
   >
-    {props.children}
+    <Box w="full" maxW="7xl" mx="auto">
+      {props.children}
+    </Box>
   </Flex>
 );

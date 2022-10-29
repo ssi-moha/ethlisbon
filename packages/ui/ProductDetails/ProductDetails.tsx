@@ -18,6 +18,9 @@ import {
 } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
+import Link from 'next/link';
+
+const productId = 1;
 
 export const ProductDetails = () => (
   <Container maxW="7xl">
@@ -69,22 +72,24 @@ export const ProductDetails = () => (
           </VStack>
         </Stack>
 
-        <Button
-          rounded="none"
-          w="full"
-          mt={8}
-          size="lg"
-          py="7"
-          bg={useColorModeValue('gray.900', 'gray.50')}
-          color={useColorModeValue('white', 'gray.900')}
-          textTransform="uppercase"
-          _hover={{
-            transform: 'translateY(2px)',
-            boxShadow: 'lg',
-          }}
-        >
-          Add to cart
-        </Button>
+        <Link href={`/shipping/${productId}`}>
+          <Button
+            rounded="none"
+            w="full"
+            mt={8}
+            size="lg"
+            py="7"
+            bg={useColorModeValue('gray.900', 'gray.50')}
+            color={useColorModeValue('white', 'gray.900')}
+            textTransform="uppercase"
+            _hover={{
+              transform: 'translateY(2px)',
+              boxShadow: 'lg',
+            }}
+          >
+            SHOP NOW
+          </Button>
+        </Link>
 
         <Stack direction="row" alignItems="center" justifyContent="center">
           <MdLocalShipping />
