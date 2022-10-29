@@ -2,17 +2,14 @@
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
     "paths": {
-      "react": [
-        "./node_modules/@types/react"
-      ]
+      "react": ["./node_modules/@types/react"]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "../../packages/ui/OrderSummary/OrderSummary.tsx"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

@@ -8,6 +8,7 @@ export * from './Header';
 export * from './BackButton';
 export * from './Icons';
 export * from './Section';
+export * from './OrderSummary/OrderSummary';
 
 // @chakra-ui
 export {
@@ -20,6 +21,9 @@ export {
   Th,
   Thead,
   Tr,
+  Stack,
+  Text,
+  Divider,
   ButtonGroup,
   useToast,
   Modal,
@@ -29,4 +33,11 @@ export {
   ModalCloseButton,
   ModalBody,
   ModalFooter,
+  VStack,
+  HStack,
+  Heading,
+  FormControl,
+  FormLabel,
+  Input,
+  FormHelperText,
 } from '@chakra-ui/react';
