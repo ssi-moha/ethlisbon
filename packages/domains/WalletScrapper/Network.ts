@@ -1,1 +1,1 @@
-export type { Network } from 'alchemy';
+export { Network } from 'alchemy';
