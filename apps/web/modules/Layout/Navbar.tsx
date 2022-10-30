@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useAppSelector } from 'store';
 
