@@ -70,6 +70,7 @@ export type App = {
   __typename?: 'app';
   id: Scalars['uuid'];
   imgUrl?: Maybe<Scalars['String']>;
+  isZKP: Scalars['Boolean'];
   name: Scalars['String'];
 };
 
@@ -101,6 +102,7 @@ export type App_Bool_Exp = {
   _or?: InputMaybe<Array<App_Bool_Exp>>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   imgUrl?: InputMaybe<String_Comparison_Exp>;
+  isZKP?: InputMaybe<Boolean_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
 };
 
@@ -114,6 +116,7 @@ export enum App_Constraint {
 export type App_Insert_Input = {
   id?: InputMaybe<Scalars['uuid']>;
   imgUrl?: InputMaybe<Scalars['String']>;
+  isZKP?: InputMaybe<Scalars['Boolean']>;
   name?: InputMaybe<Scalars['String']>;
 };
 
@@ -153,6 +156,7 @@ export type App_On_Conflict = {
 export type App_Order_By = {
   id?: InputMaybe<Order_By>;
   imgUrl?: InputMaybe<Order_By>;
+  isZKP?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
 };
 
@@ -168,6 +172,8 @@ export enum App_Select_Column {
   /** column name */
   ImgUrl = 'imgUrl',
   /** column name */
+  IsZkp = 'isZKP',
+  /** column name */
   Name = 'name',
 }
 
@@ -175,6 +181,7 @@ export enum App_Select_Column {
 export type App_Set_Input = {
   id?: InputMaybe<Scalars['uuid']>;
   imgUrl?: InputMaybe<Scalars['String']>;
+  isZKP?: InputMaybe<Scalars['Boolean']>;
   name?: InputMaybe<Scalars['String']>;
 };
 
@@ -190,6 +197,7 @@ export type App_Stream_Cursor_Input = {
 export type App_Stream_Cursor_Value_Input = {
   id?: InputMaybe<Scalars['uuid']>;
   imgUrl?: InputMaybe<Scalars['String']>;
+  isZKP?: InputMaybe<Scalars['Boolean']>;
   name?: InputMaybe<Scalars['String']>;
 };
 
@@ -199,6 +207,8 @@ export enum App_Update_Column {
   Id = 'id',
   /** column name */
   ImgUrl = 'imgUrl',
+  /** column name */
+  IsZkp = 'isZKP',
   /** column name */
   Name = 'name',
 }
@@ -963,6 +973,28 @@ export type GetProductsQuery = {
   }>;
 };
 
+export type ChangeZkpMutationVariables = Exact<{
+  _eq?: InputMaybe<Scalars['uuid']>;
+  isZKP?: InputMaybe<Scalars['Boolean']>;
+}>;
+
+export type ChangeZkpMutation = {
+  __typename?: 'mutation_root';
+  update_app?: {
+    __typename?: 'app_mutation_response';
+    returning: Array<{ __typename?: 'app'; id: any; isZKP: boolean; name: string }>;
+  } | null;
+};
+
+export type GetAppQueryVariables = Exact<{
+  id: Scalars['uuid'];
+}>;
+
+export type GetAppQuery = {
+  __typename?: 'query_root';
+  app_by_pk?: { __typename?: 'app'; id: any; isZKP: boolean; name: string } | null;
+};
+
 export type GetProductByIdQueryVariables = Exact<{
   id: Scalars['uuid'];
 }>;
@@ -1261,6 +1293,96 @@ export type GetProductsQueryResult = Apollo.QueryResult<
   GetProductsQuery,
   GetProductsQueryVariables
 >;
+export const ChangeZkpDocument = gql`
+  mutation ChangeZKP($_eq: uuid, $isZKP: Boolean) {
+    update_app(_set: { isZKP: $isZKP }, where: { id: { _eq: $_eq } }) {
+      returning {
+        id
+        isZKP
+        name
+      }
+    }
+  }
+`;
+export type ChangeZkpMutationFn = Apollo.MutationFunction<
+  ChangeZkpMutation,
+  ChangeZkpMutationVariables
+>;
+
+/**
+ * __useChangeZkpMutation__
+ *
+ * To run a mutation, you first call `useChangeZkpMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useChangeZkpMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [changeZkpMutation, { data, loading, error }] = useChangeZkpMutation({
+ *   variables: {
+ *      _eq: // value for '_eq'
+ *      isZKP: // value for 'isZKP'
+ *   },
+ * });
+ */
+export function useChangeZkpMutation(
+  baseOptions?: Apollo.MutationHookOptions<ChangeZkpMutation, ChangeZkpMutationVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<ChangeZkpMutation, ChangeZkpMutationVariables>(
+    ChangeZkpDocument,
+    options,
+  );
+}
+export type ChangeZkpMutationHookResult = ReturnType<typeof useChangeZkpMutation>;
+export type ChangeZkpMutationResult = Apollo.MutationResult<ChangeZkpMutation>;
+export type ChangeZkpMutationOptions = Apollo.BaseMutationOptions<
+  ChangeZkpMutation,
+  ChangeZkpMutationVariables
+>;
+export const GetAppDocument = gql`
+  query GetApp($id: uuid!) {
+    app_by_pk(id: $id) {
+      id
+      isZKP
+      name
+    }
+  }
+`;
+
+/**
+ * __useGetAppQuery__
+ *
+ * To run a query within a React component, call `useGetAppQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAppQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAppQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useGetAppQuery(
+  baseOptions: Apollo.QueryHookOptions<GetAppQuery, GetAppQueryVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetAppQuery, GetAppQueryVariables>(GetAppDocument, options);
+}
+export function useGetAppLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetAppQuery, GetAppQueryVariables>,
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetAppQuery, GetAppQueryVariables>(GetAppDocument, options);
+}
+export type GetAppQueryHookResult = ReturnType<typeof useGetAppQuery>;
+export type GetAppLazyQueryHookResult = ReturnType<typeof useGetAppLazyQuery>;
+export type GetAppQueryResult = Apollo.QueryResult<GetAppQuery, GetAppQueryVariables>;
 export const GetProductByIdDocument = gql`
   query GetProductById($id: uuid!) {
     product_by_pk(id: $id) {

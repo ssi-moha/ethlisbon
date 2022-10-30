@@ -1,0 +1,7 @@
+query GetApp($id: uuid!) {
+  app_by_pk(id: $id) {
+    id
+    isZKP
+    name
+  }
+}

@@ -1,0 +1,9 @@
+mutation ChangeZKP($_eq: uuid, $isZKP: Boolean) {
+  update_app(_set: {isZKP: $isZKP}, where: {id: {_eq: $_eq}}) {
+    returning {
+      id
+      isZKP
+      name
+    }
+  }
+}
